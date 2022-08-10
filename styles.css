@@ -1,0 +1,181 @@
+body{
+	background: #fff;
+	margin: 0;
+	font-family: Helvetica, Sans-Serif;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+.text{
+	max-width: 1000px;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+@media all and (max-width: 1000px){
+	.text:not(.text-slider){
+		padding: 2em;
+
+	}
+}
+h1,h2,h3{
+	font-size: 2.5em;
+	line-height: 1em;
+	font-family: Helvetica, Sans-Serif;
+}
+h2{
+	font-size: 3em;
+		font-family: Richard Signatera, Sans-Serif;
+
+}
+img{
+	width: 100%;
+}
+
+.two-grid{
+	display: flex;
+	flex-wrap: nowrap;
+}
+.two-row{
+	flex: 50% 0 0;
+}
+
+
+header{
+	background: #D2691D;
+	color: #ffff;
+	width: 100%;
+}
+header .header-information{
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+header .header-information p{
+	text-align: right;
+	padding-left: 13em;
+}
+
+header .arrow{
+	width: 2em;
+	position: absolute;
+}
+
+.image-textslider .img-margin{
+	width: 100%;
+	height: auto;
+	margin-bottom: 0.5em;
+}
+.image-textslider .text-slider p{
+	position: -webkit-sticky;
+  	position: sticky;
+  	top: 2em;
+  	padding: 3em;
+  	margin: 0;
+
+}
+@media all and (max-width: 1000px){
+	.image-textslider .text-slider p{
+		padding: 1em;
+
+	}
+}
+
+
+footer{
+	position: relative;
+}
+footer img.footer{
+	position: absolute;
+	top: 0;
+	z-index: -1;
+}
+footer .contact{
+	color: #fff;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 1em;
+	height: 100%;
+}
+footer .contact h3,
+footer .contact p{
+	flex: 100% 0 0;
+	margin: 0.5em 0;
+}
+footer p.locatie{
+	flex: 30% 0 0;
+}
+
+
+
+
+
+
+.arrow-down {
+  position: relative;
+   width: 24px;
+  height: 24px; 
+  z-index: 10;
+  backround-color: #000;
+}
+
+.arrow {
+  position: absolute;
+  width: 28px;
+  height: 8px;
+  opacity: 0;
+  transform: scale3d(0.5, 0.5, 0.5);
+  animation: move 3s ease-out infinite;
+}
+
+.arrow:first-child {
+  animation: move 3s ease-out 1s infinite;
+}
+
+.arrow:nth-child(2) {
+  animation: move 3s ease-out 2s infinite;
+}
+
+.arrow:before,
+.arrow:after {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 51%;
+  background: #fff;
+}
+
+.arrow:before {
+  left: 0;
+  transform: skew(0deg, 30deg);
+}
+
+.arrow:after {
+  right: 0;
+  width: 50%;
+  transform: skew(0deg, -30deg);
+}
+
+@keyframes move {
+  25% {
+    opacity: 1;
+
+  }
+  33% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  67% {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
+}
+
+
+@keyframes pulse {
+  to {
+    opacity: 1;
+  }
+}
