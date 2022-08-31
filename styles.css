@@ -1,7 +1,7 @@
 
 @font-face {
     font-family: 'Bitter';
-    src: url('fonts/Bitter-ExtraBoldItalic.woff2') format('woff2'), url('fonts/Bitter-ExtraBoldItalic.woff') format('woff');
+    src: url('fonts/Bitter/static/Bitter-ExtraBoldItalic.woff2') format('woff2'), url('fonts/Bitter-ExtraBoldItalic.woff') format('woff');
     font-weight: bold;
     font-style: italic;
     font-display: swap;
@@ -9,7 +9,7 @@
 
 @font-face {
     font-family: 'Bitter';
-    src: url('fonts/Bitter-Regular.woff2') format('woff2'), url('fonts/Bitter-Regular.woff') format('woff');
+    src: url('fonts/Bitter/static/Bitter-Regular.woff2') format('woff2'), url('fonts/Bitter-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -17,7 +17,7 @@
 
 @font-face {
     font-family: 'Bitter';
-    src: url('fonts/Bitter-MediumItalic.woff2') format('woff2'), url('fonts/Bitter-MediumItalic.woff') format('woff');
+    src: url('fonts/Bitter/static/Bitter-MediumItalic.woff2') format('woff2'), url('fonts/Bitter-MediumItalic.woff') format('woff');
     font-weight: 500;
     font-style: italic;
     font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
     font-family: 'Bitter';
-    src: url('fonts/Bitter-SemiBoldItalic.woff2') format('woff2'), url('fonts/Bitter-SemiBoldItalic.woff') format('woff');
+    src: url('fonts/Bitter/static/Bitter-SemiBoldItalic.woff2') format('woff2'), url('fonts/Bitter-SemiBoldItalic.woff') format('woff');
     font-weight: 600;
     font-style: italic;
     font-display: swap;
@@ -33,14 +33,14 @@
 
 @font-face {
     font-family: 'Bitter';
-    src: url('fonts/Bitter-LightItalic.woff2') format('woff2'), url('Bitter-LightItalic.woff') format('woff');
+    src: url('fonts/Bitter/static/Bitter-LightItalic.woff2') format('woff2'), url('Bitter-LightItalic.woff') format('woff');
     font-weight: 300;
     font-style: italic;
     font-display: swap;
 }
 @font-face {
     font-family: 'Bitter';
-    src: url('fonts/Bitter-Light.woff2') format('woff2'), url('fonts/Bitter-Light.woff') format('woff');
+    src: url('fonts/Bitter/static/Bitter-Light.woff2') format('woff2'), url('fonts/Bitter-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -48,7 +48,7 @@
 
 @font-face {
     font-family: 'Bitter';
-    src: url('fonts/Bitter-Medium.woff2') format('woff2'), url('fonts/Bitter-Medium.woff') format('woff');
+    src: url('fonts/Bitter/static/Bitter-Medium.woff2') format('woff2'), url('fonts/Bitter-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -56,7 +56,7 @@
 
 @font-face {
     font-family: 'Bitter';
-    src: url('fonts/Bitter-SemiBold.woff2') format('woff2'), url('fonts/Bitter-SemiBold.woff') format('woff');
+    src: url('fonts/Bitter/static/Bitter-SemiBold.woff2') format('woff2'), url('fonts/Bitter-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -65,6 +65,7 @@
 html,body{
     padding: 0;
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -113,6 +114,7 @@ video{
 .screen#one{
     background: url(links/unslash-Background.jpeg) no-repeat ;
     background-size: cover;
+    background-position: bottom center;
     height: 100vh;
 }
 .screen#one .header-text{
@@ -160,7 +162,7 @@ video{
     }
     .wrapper {
         height: 100vh;
-        width: 560vw;
+        width: 475vw;
         display: flex;
         flex-direction: row;
         transform: rotate(90deg) translateY(-100vh);
@@ -168,12 +170,15 @@ video{
     }
     .screen{
         width: 100vw;
-        height: 75vh;
+        height: 100vh;
         padding-top: 20vh;
         padding-bottom: 5vh;
+        box-sizing: border-box;
+        background-color: #9370db36;
+        border: 10px solid #c500ff80;
     }
     .text{
-        flex: 35% 0 0;
+        flex: 35% 1 0;
     }
     .screen#one{
         padding:0;
@@ -183,13 +188,12 @@ video{
     }
     .screen#two,
     .screen#four{
-        height: 80vh;
+        padding-bottom: 0;
     }
     .screen#two{
         background: url(links/test.png) no-repeat left;
-        background-size: contain ;
+        background-size: cover ;
         display: flex; 
-        gap: 3em;
     }
     .screen#two .foto{
         flex: 40% 0 0;
@@ -197,18 +201,19 @@ video{
     }
     .screen#two .text{
         order: 2;
+        margin: 0 4em ;
     }
     .screen#three{
-        width: 260vw;
+        width: 175vw;
+        margin: 0 1em ;
     }
     .screen#three .gallery{
         flex-wrap: nowrap;
         height: calc(100% - 20%);
     }
-    .screen#three .rectangle,
+    .screen#three .rectangle-container,
     .screen#three .square-container{
-        min-width: 28vw;
-        max-width: 35vw;
+        width: 25vw;
     }
     .screen#three .gallery .square-container img,
     .screen#three .gallery .square-container video{
@@ -229,8 +234,8 @@ video{
 
 
 
-
 @media all and (max-width: 1000px){
+    /* Alle schermen kleiner dan 1000px breed krijgen de "mobiele" uitstraling */
     body{
         font-size: 95%;
     }
@@ -256,16 +261,19 @@ video{
     .screen#two img{
         height: 30vh;
     }
+    .screen#two .text{
+        flex: 45% 0 0;
+    }
     .screen#three .gallery{
         flex-wrap: wrap;
         justify-content: space-between;
     }
    .screen#three .gallery .square-container{
          height: 100%;
-        flex: 48% 0 1;
+        flex: 48% 1 1;
    }
    .screen#three .gallery .rectangle-container{
-        flex: 48% 0 1;
+        flex: 48% 1 1;
    }
    .screen#four{
         display: flex;
@@ -280,4 +288,3 @@ video{
    }
 
 }
-
