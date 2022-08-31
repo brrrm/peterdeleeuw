@@ -6,15 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Peter de Leeuw</title>
     <link rel="stylesheet" href="styles.css">
-        <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="script-mobile.js" type="text/javascript" ></script>
+    <script src="script-desktop.js" type="text/javascript" ></script>
 
 <link rel="stylesheet" href="https://use.typekit.net/mok8llw.css">
 </head>
   <body>
-    <div class="scroll-tracker"></div>
-    <div class="outer-wrapper">
-      <div class="wrapper">
-
+      <main>
         <section class="screen" id="one">
           <div class="header-text">
              <h3>Peter de Leeuw</h3>
@@ -37,11 +36,6 @@
             <h2>op hoog niveau</h2>
           </div>
         </section>
-
-
-
-
-
 
         <section class="screen" id="two">
           <div class="text">
@@ -105,10 +99,10 @@
             <p>Peter de Leeuw is te bereiken onder <br>
             telefoonnummer: 06 14961274<br>
             mailadres: p_de_leeuw@hetnet.nl</p>
-            <p> <strong>Locatie Amstelveen</strong><br>
+            <p class="location"> <strong>Locatie Amstelveen</strong><br>
               Ingenieur Romplaan 1A<br>
               1185 DK Amstelveen</p>
-            <p><strong>Locatie Sint Maartensvlotbrug</strong><br>
+            <p class="location"><strong>Locatie Sint Maartensvlotbrug</strong><br>
             Ruigeweg 55A<br>
             Huis 16<br>
             752 HC Sint Maartensvlotbrug</p>
@@ -116,19 +110,20 @@
           <div class="foto">
             <img src="links/PeterdeLeeuw-screen4.jpg">
           </div>
-       </section>
-    </div>
-   </div>
-<!--<script>
-      ScrollReveal({
-        reset: true,
-        distance: '60px',
-        duration: 2500,
-        delay: 400
-      });
-      ScrollReveal().reveal('.foto', { delay:500, orgin: 'left',
-      });
-    </script> -->
+       </section> 
+    </main>
+
+<script>
+    const scrollContainer = document.querySelector("main");
+
+    scrollContainer.addEventListener("wheel", (evt) => {
+    evt.preventDefault();
+    scrollContainer.scrollLeft += evt.deltaY;
+    });
+
+
+
+</script>
   </body>
 
 </html>
