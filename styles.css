@@ -104,9 +104,9 @@ video{
     object-fit: cover;
     display: block;
 }
-/*::-webkit-scrollbar{
+::-webkit-scrollbar{
     display: none;
-}*/
+}
 
 .text{
     flex: 35% 0 0;
@@ -142,7 +142,7 @@ section{
         width: 100vw;
    }
     .text{
-        padding: 1em ;
+        padding: 2em;
     }
     section{
         min-height: auto;
@@ -152,6 +152,23 @@ section{
         padding-bottom: 0;
     }
 }
+
+
+@media all and (max-width: 768px){
+    h1{
+        font-size: 3.6em;
+    }
+    .screen#one .header-text h2{
+        font-size: 1.5em;
+    }
+    h3{
+        font-size: 1.5em;
+    }
+    .screen#one {
+        padding: 1em;
+    }
+}
+
 
 
 
@@ -245,15 +262,19 @@ section{
         display: block;
         margin: 0;
         padding: 0;
+        height: auto;
     }
     .screen#two .foto{
        height: 100vh;
     }
     .screen#two .text{
-        padding-top: 0;
+        padding-top: 2em;
     }
     .screen#two .text .quote-container{
         margin: 0;
+    }
+    .screen#two .text .quote-container .quote{
+        bottom: 5em;
     }
 }
 
@@ -309,13 +330,18 @@ section{
         flex-wrap: wrap;
         justify-content: space-between;
         width: auto;
+        margin-top: 1em;
     }
-    .screen#three .gallery .rectangle-container,
-    .screen#three .gallery .square-container{
-        flex: 45% 1 0;
+    .screen#three .gallery .square-container img, 
+    .screen#three .gallery .square-container video{
+        height: 48%;
     }
 }
-
+@media all and (max-width: 768px){
+    .screen#three{
+        display: block;
+    }
+}
 
 
 .screen#four{
@@ -335,24 +361,9 @@ section{
 @media all and (max-width: 1000px){
     .screen#four{
         display: block;
+        height: auto;
     }
 }
 
 
-
-
-@media all and (max-width: 768px){
-    h1{
-        font-size: 3.6em;
-    }
-    .screen#one .header-text h2{
-        font-size: 1.5em;
-    }
-    h3{
-        font-size: 1.5em;
-    }
-    .screen#one {
-        padding: 1em;
-    }
-}
 
