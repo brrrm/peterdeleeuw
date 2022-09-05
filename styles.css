@@ -341,6 +341,12 @@ section{
     .screen#three{
         display: block;
     }
+    .screen#three .text{
+        padding: 1.5em 0;
+    }
+    .screen#three .gallery{
+        margin: 0;
+    }
 }
 
 
