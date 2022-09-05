@@ -65,9 +65,9 @@
 html,body{
     padding: 0;
     margin: 0;
-    scroll-behavior: smooth;
-}
+        scroll-behavior: smooth;
 
+}
 body{
 	font-size: 16px;
 	font-family: bitter, serif;
@@ -91,6 +91,7 @@ h2{
 h3{
 	font-weight: 400;
     font-size: 2em;
+    line-height: 1.5em;
 }
 .bigger{
 	font-size: 1.3125em;
@@ -108,116 +109,20 @@ video{
 }*/
 
 .text{
-   flex: 35% 1 0;
+    flex: 35% 0 0;
 }
 main {
-    overflow-x: hidden;
-    overflow-y: hidden;
-    display: flex;
-    height: 100vh;
-   
+ 
 }
+
 section{
-    min-width: 100vw;
-    min-height: 100vh;
     height: 100vh;
-    width: 100vw;
-    padding-top: 20vh;
-    padding-bottom: 5vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
     box-sizing: border-box;
-    border: 10px solid #c500ff80;
 }
-
-
-
-
-
-
-
-
-
-.screen#one{
-    background: url(links/unslash-Background.jpeg) no-repeat;
-    background-size: cover;
-    background-position: bottom center;
-}
-.screen#one .header-text{
-    max-width: 950px;
-    margin-right: 5em;
-    margin-left: auto;
-}
-.screen#one .header-text h1{
-    margin-top: 1em;
-    text-shadow: 3px 3px 0px #000;
-    letter-spacing: -13px;
-    line-height: 1em;
-}
-.screen#one .header-text h2{
-    font-weight: 400;
-    text-align: right;
-    padding-right: 20%;
-}
-.screen#two{
-    background: url(links/test.png) no-repeat left;
-    background-size: cover ;
-    display: flex; 
-    padding-bottom: 0;
-}
-.screen#two .foto{
-    flex: 40% 0 0;
-    order: 1;
-}
-.screen#two .text{
-    order: 2;
-    margin: 0 4em ;
-}
-.screen#three{
-   overflow-x: scroll;
-}
-
-.screen#three .text{
-    position: sticky;
-    left: 0;
-}
-.screen#three .gallery{
-    display: flex;
-    width: auto;
-    gap: 1em;
-    overflow: hidden;
-}
-.screen#three .gallery .square-container > *:first-child{
-    margin-bottom: 1em;
-}
-.screen#four{
-    padding-bottom: 0;
-}
-
-.screen#three .gallery{
-    flex-wrap: nowrap;
-    height: calc(100% - 20%);
-    width: 200vw;
-}
-.screen#three .rectangle-container,
-.screen#three .square-container{
-    width: 40vw;
-}
-.screen#three .gallery .square-container img,
-.screen#three .gallery .square-container video{
-    height: calc(50% - 0.5em);
-}
-
-.screen#four{
-    display: flex;
-}
-.screen#four .text{
-    flex: 20% 0 0;
-    padding:0 2em;
-}
-.screen#four .foto{
-    flex: 45% 1 0;
-}
-
-
 
 @media all and (max-width: 1000px){
     body{
@@ -235,16 +140,46 @@ section{
     main{
         display: block;
         width: 100vw;
-        overflow-y: scroll;
    }
     .text{
-        padding: 1em !important;
+        padding: 1em ;
     }
-    .screen{
+    section{
+        min-height: auto;
         height: auto;
-        padding: 0;
+        width: 100vw;
+        padding-top: 0;
+        padding-bottom: 0;
     }
-    .screen#one{
+}
+
+
+
+
+.screen#one{
+    background: url(links/unslash-Background.jpeg) no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    padding-top: 20vh;
+}
+.screen#one .header-text{
+    max-width: 950px;
+    margin-right: 5em;
+    margin-left: auto;
+}
+.screen#one .header-text h1{
+    margin-top: 1em;
+    text-shadow: 3px 3px 0px #000;
+    letter-spacing: -13px;
+    line-height: 1em;
+}
+.screen#one .header-text h2{
+    font-weight: 400;
+    text-align: right;
+    padding-right: 20%;
+}
+@media all and (max-width: 1000px){
+    section#one{
         padding: 1em;
         height: 100vh;
     }
@@ -261,17 +196,115 @@ section{
     .screen#one .header-text h3{
         margin: 0;
     }
-    .screen#two {
-        background-image: none;
+}
+
+
+
+
+.screen#two{
+    height: 200vh;
+    display: flex; 
+    column-gap: 5em;
+    position: relative;
+}
+.screen#two .foto{
+    flex: 60% 0 0;
+    order: 1;
+    height: 100%;
+    position: relative;
+}
+.screen#two .foto img{
+    height: 100vh;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10vh;
+    border: 10px solid #48BE7A;
+    box-sizing: border-box;
+}
+.screen#two .text{
+    order: 2;
+    flex: 30% 0 0;
+    padding-top: 20vh;
+}
+.screen#two .text .quote-container{
+    margin-top: 20vh;
+    background: #48BE7A;
+    color: #fff;
+}
+.screen#two .text .quote-container .quote{
+    position: absolute;
+    max-width: 50vw;
+    right: 4em;
+    z-index: 100;
+    padding: 1em;
+    background: #48BE7A;
+    color: #fff;
+}
+@media all and (max-width: 1000px){
+    .screen#two{
         display: block;
+        margin: 0;
         padding: 0;
-    }  
-    .screen#two img{
-        height: 30vh;
+    }
+    .screen#two .foto{
+       height: 100vh;
     }
     .screen#two .text{
+        padding-top: 0;
+    }
+    .screen#two .text .quote-container{
         margin: 0;
     }
+}
+
+
+
+
+.screen#three{
+    display: flex;
+    flex-wrap: nowrap;
+    height: auto;
+}
+.screen#three .text{
+    flex: 30% 0 0;
+    position: relative;
+    margin-right: 2em;
+}
+.screen#three .text .sticky{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20vh;
+    left: 1vw;
+    height: ;
+}
+.screen#three .gallery{
+    display: flex;
+    width: auto;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+.screen#three .square-container{    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.screen#three .rectangle-container,
+.screen#three .square-container{
+    flex: 48% 0 1;
+}
+.screen#three .gallery .square-container img,
+.screen#three .gallery .square-container video{
+    height: 49%;
+}
+.screen#three .quote{
+    font-size: 1.5em;
+    z-index: 100;
+    padding: 1em;
+    box-sizing: border-box;
+    background: #F4648B;
+    color: #fff;
+}
+@media all and (max-width: 1000px){
     .screen#three .gallery{
         flex-wrap: wrap;
         justify-content: space-between;
@@ -281,10 +314,32 @@ section{
     .screen#three .gallery .square-container{
         flex: 45% 1 0;
     }
+}
+
+
+
+.screen#four{
+    display: flex;
+    padding: 0;
+    background: black;
+    color: #fff;
+    padding-left: 5vw;
+    height: 60vh;
+}
+.screen#four .foto{
+    flex: 50% 1 0;
+}
+.screen#four .text{
+    margin-top: 10vh;
+}
+@media all and (max-width: 1000px){
     .screen#four{
         display: block;
     }
 }
+
+
+
 
 @media all and (max-width: 768px){
     h1{
@@ -300,3 +355,4 @@ section{
         padding: 1em;
     }
 }
+
