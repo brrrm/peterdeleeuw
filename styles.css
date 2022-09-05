@@ -111,9 +111,20 @@ video{
 .text{
     flex: 35% 0 0;
 }
-main {
- 
+
+.quote p{
+    letter-spacing: 3px;
+    margin: 0.5em;
+    text-align: right;
+    font-weight: 300;
 }
+.quote h3,
+.quote h2{
+    font-weight: 400;
+    font-style: italic;
+    margin: 0.5em;
+}
+
 
 section{
     height: 100vh;
@@ -172,12 +183,11 @@ section{
 
 
 
-
 .screen#one{
     background: url(links/unslash-Background.jpeg) no-repeat;
     background-size: cover;
     background-position: bottom center;
-    padding-top: 20vh;
+    padding-top: 15vh;
 }
 .screen#one .header-text{
     max-width: 950px;
@@ -232,7 +242,8 @@ section{
     position: relative;
 }
 .screen#two .foto img{
-    height: 100vh;
+    height: 
+    90vh;
     position: -webkit-sticky;
     position: sticky;
     top: 10vh;
@@ -290,7 +301,7 @@ section{
 .screen#three .text{
     flex: 30% 0 0;
     position: relative;
-    margin-right: 2em;
+    margin-right: 1em;
 }
 .screen#three .text .sticky{
     position: -webkit-sticky;
@@ -318,15 +329,27 @@ section{
 .screen#three .gallery .square-container video{
     height: 49%;
 }
-.screen#three .quote{
-    font-size: 1.5em;
+.screen#three .quote-container{
     z-index: 100;
-    padding: 1em;
-    box-sizing: border-box;
     background: #F4648B;
     color: #fff;
+    position: relative;
+}
+.screen#three .quote-container .quote{
+    height: auto;
+    position: absolute;
+    padding: 1em;
+    box-sizing: border-box;
+    top: 50%;
+    transform: translateY(-50%);
 }
 @media all and (max-width: 1000px){
+    .screen#three{
+        padding: 2em;
+    }
+    .screen#three .text{
+        padding: 0;
+    }
     .screen#three .gallery{
         flex-wrap: wrap;
         justify-content: space-between;
@@ -369,8 +392,19 @@ section{
     .screen#four{
         display: block;
         height: auto;
+        padding: 0;
+    }
+    .screen#four .text{
+        margin: 0;
     }
 }
 
 
-
+section.quote{
+    height: auto;
+    background: #EA9624;
+    color: #fff;
+    padding: 2em;
+    margin-top: 1em;
+    margin-bottom: 0;
+}
