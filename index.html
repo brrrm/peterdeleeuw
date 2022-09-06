@@ -60,22 +60,22 @@
     <section class="screen" id="three">
       <div class="text">
         <div class="sticky">
-          <h2>Iedere week een half uur les</h2>
+          <h2 class="under-below">Iedere week een half uur les</h2>
           <p class="bigger"> …en dagelijks een half uur zelfstudie, creëert groei! </p>
         </div>
       </div>
       <div class="gallery" id="gallery">
-        <div class="rectangle-container">
+        <div class="rectangle-container img">
           <img src="links/Vioolles1-screen3.jpeg">
         </div>
-        <div class="square-container">
+        <div class="square-container img">
           <video controls>
             <source src="links/Video1-screen 3.mp4" type="video/mp4">
           </video>
           <img src="links/Vioolles4-screen3.jpeg">
         </div>
        
-        <div class="square-container">
+        <div class="square-container img">
           <img src="links/Vioolles2-screen3.png">
           <video controls>
             <source src="links/Video2-screen 3.mp4" type="video/mp4">
@@ -83,36 +83,38 @@
         </div>
         <div class="rectangle-container quote-container">
           <div class="quote">
-           <p>- Rene de Groen, 52 jaar </p><h3>"Hier komt een leuke quote van een cursist te staan"</h3>  
+           <p>- Rene de Groen, 52 jaar </p><h3>"Hier komt een leuke quote van een cursist te staan"</h3> 
           </div>
         </div>
 
-        <div class="rectangle-container">
+        <div class="rectangle-container img">
           <img src="links/Vioolles-screen2.jpeg">
         </div>
-        <div class="square-container">
+        <div class="square-container img">
           <video controls>
             <source src="links/Video3-screen 3.mp4" type="video/mp4">
           </video>
           <img src="links/Vioolles3-screen3.jpeg">
         </div>
-        <div class="square-container">
+        <div class="square-container img">
           <img src="links/orkest1-screen3.jpg">
           <video controls>
             <source src="links/Vioolles-video1-screen3.mp4" type="video/mp4">
           </video>
         </div>
-         <div class="rectangle-container">
+         <div class="rectangle-container img">
           <img src="links/Vioolles5-screen3.jpeg">
         </div>
         
       </div>
     </section>
 
-    <section class="quote"> 
-      <div class="quote-container">
-      <p>- Rene de Groen, 52 jaar </p><h2>"Hier komt een leuke quote van een cursist te staan"</h2></section>
+    <section class="quote-container"> 
+      <div class="quote">
+        <p>- Rene de Groen, 52 jaar </p><h2>"Hier komt een leuke quote van een cursist te staan"</h2>
       </div>
+    </section>
+
     <section class="screen" id="four">
       <div class="text">
         <h2>Contact</h2>
@@ -133,6 +135,31 @@
     </section> 
   </main>
 
-
+<script>
+   
+var gallery = document.querySelectorAll(".gallery .img img");
+gallery.forEach((img) => {
+  img.onclick = function () {
+    //create overlay
+    var overlay = document.createElement("div");
+    overlay.className = "overlay";
+    var imgContainerIndide = document.createElement("div");
+    imgContainerIndide.className = "img-container";
+    var imgIndide = document.createElement("img");
+    imgIndide.src = img.src;
+    imgContainerIndide.appendChild(imgIndide);
+    var closeButton = document.createElement("div");
+    closeButton.className = "close";
+    closeButton.appendChild(document.createTextNode("Sluiten"));
+    imgContainerIndide.appendChild(closeButton);
+    overlay.appendChild(imgContainerIndide);
+    document.body.appendChild(overlay);
+    document.querySelector(".close").onclick = function (e) {
+      e.target.parentElement.parentElement.remove();
+    };
+  };
+});
+//
+</script>
 </body>
 </html>
