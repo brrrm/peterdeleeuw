@@ -236,7 +236,7 @@ section{
     position: relative;
 }
 .screen#two .foto{
-    flex: 60% 0 0;
+    flex: 50% 0 0;
     order: 1;
     height: 100%;
     position: relative;
@@ -262,8 +262,8 @@ section{
 }
 .screen#two .text .quote-container .quote{
     position: absolute;
-    max-width: 50vw;
-    right: 4em;
+    max-width: 45vw;
+    left: 40%;
     z-index: 1;
     padding: 1em;
     background: #48BE7A;
@@ -301,7 +301,7 @@ section{
 .screen#three .text{
     flex: 30% 0 0;
     position: relative;
-    margin-right: 1em;
+    margin-right: 6em;
 }
 .screen#three .text .sticky{
     position: -webkit-sticky;
