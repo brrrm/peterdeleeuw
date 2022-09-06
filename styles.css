@@ -467,7 +467,8 @@ section.quote-container .quote p{
 }
 .overlay .img-container {
     position: absolute;
-    width: 50%;
+    max-height: 90vh;
+    max-width: 90vw;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -480,5 +481,9 @@ section.quote-container .quote p{
     cursor: pointer;
     height: 1em;
 }
+@media all and (max-width: 1000px){
+    .overlay .img-container{
 
+    }
+}
 
