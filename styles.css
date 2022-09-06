@@ -71,7 +71,7 @@ html,body{
 body{
 	font-size: 16px;
 	font-family: bitter, serif;
-    font-weight: 500;
+    font-weight: 300;
     line-height: 1.5em;
  
 }
@@ -333,6 +333,8 @@ section{
 .screen#three .rectangle-container,
 .screen#three .square-container{
     flex: 48% 0 1;
+    cursor: pointer;
+
 }
 .screen#three .gallery .square-container img,
 .screen#three .gallery .square-container video{
@@ -402,7 +404,25 @@ section.quote-container .quote{
 section.quote-container .quote p{
     text-align: center;
 }
+.cat{
+    width: auto;
+    z-index: 100;
+    height: auto;
+    opacity: 0;
+        transition: 1s ease-in-out;
 
+}
+.cat img{
+    width: auto;
+    height: 20%;
+     bottom: 1em;
+    left: 0;
+    position: absolute;
+}
+.text:hover .cat{
+    opacity: 1;
+
+}
 
 
 
@@ -417,6 +437,7 @@ section.quote-container .quote p{
 }
 .screen#four .text{
     margin-top: 10vh;
+    position: relative;
 }
 @media all and (max-width: 1000px){
     .screen#four{
