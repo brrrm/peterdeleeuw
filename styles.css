@@ -393,21 +393,16 @@ section.quote-container .quote p{
     width: auto;
     z-index: 100;
     height: auto;
-    opacity: 0;
-        transition: 1s ease-in-out;
 
 }
 .cat img{
     width: auto;
-    height: 20%;
-     bottom: 1em;
+    height: 10%;
+    bottom: 1em;
     left: 0;
     position: absolute;
 }
-.text:hover .cat{
-    opacity: 1;
 
-}
 
 
 
