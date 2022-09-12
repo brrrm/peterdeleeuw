@@ -406,7 +406,8 @@ section.quote-container .quote p{
     .cat img{
         left: auto;
         right: 1em;
-        transform: scaleX(-1);    }
+        transform: scaleX(-1);    
+    }
 }
 
 
