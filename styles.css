@@ -402,7 +402,12 @@ section.quote-container .quote p{
     left: 0;
     position: absolute;
 }
-
+@media all and (max-width: 768px){
+    .cat img{
+        left: auto;
+        right: 1em;
+        transform: scaleX(-1);    }
+}
 
 
 
