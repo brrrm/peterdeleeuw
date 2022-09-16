@@ -1,66 +1,6 @@
 
-@font-face {
-    font-family: 'Bitter';
-    src: url('fonts/Bitter/static/Bitter-ExtraBoldItalic.woff2') format('woff2'), url('fonts/Bitter-ExtraBoldItalic.woff') format('woff');
-    font-weight: bold;
-    font-style: italic;
-    font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Kalam:wght@300&display=swap');
 
-@font-face {
-    font-family: 'Bitter';
-    src: url('fonts/Bitter/static/Bitter-Regular.woff2') format('woff2'), url('fonts/Bitter-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Bitter';
-    src: url('fonts/Bitter/static/Bitter-MediumItalic.woff2') format('woff2'), url('fonts/Bitter-MediumItalic.woff') format('woff');
-    font-weight: 500;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Bitter';
-    src: url('fonts/Bitter/static/Bitter-SemiBoldItalic.woff2') format('woff2'), url('fonts/Bitter-SemiBoldItalic.woff') format('woff');
-    font-weight: 600;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Bitter';
-    src: url('fonts/Bitter/static/Bitter-LightItalic.woff2') format('woff2'), url('Bitter-LightItalic.woff') format('woff');
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Bitter';
-    src: url('fonts/Bitter/static/Bitter-Light.woff2') format('woff2'), url('fonts/Bitter-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Bitter';
-    src: url('fonts/Bitter/static/Bitter-Medium.woff2') format('woff2'), url('fonts/Bitter-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Bitter';
-    src: url('fonts/Bitter/static/Bitter-SemiBold.woff2') format('woff2'), url('fonts/Bitter-SemiBold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
 
 html,body{
     padding: 0;
@@ -112,17 +52,27 @@ video{
     flex: 35% 0 0;
 }
 
-.quote p{
+.quote-container{
+	padding: 2em;
+	box-sizing: border-box;
+}
+.quote-container cite{
+    display: block;
     letter-spacing: 3px;
-    margin: 0.5em;
+    margin: 0 0 1em;
     text-align: right;
     font-weight: 300;
+    font-style: normal;
 }
-.quote h3,
-.quote h2{
-    font-weight: 400;
-    font-style: italic;
-    margin: 0.5em;
+.quote-container cite:before{
+	content: "- ";
+}
+.quote-container blockquote{
+    display: block;
+	font-family: 'Kalam', cursive;
+    font-size: 2em;
+    line-height: 1.3em;
+    margin: 0;
 }
 
 
@@ -190,7 +140,7 @@ section{
     padding-top: 15vh;
 }
 .screen#one img{
-    max-width: 950px;
+    max-width: 80%;
     height: auto;
     margin-right: 4em;
     margin-left: auto;
@@ -232,7 +182,7 @@ section{
     position: -webkit-sticky;
     position: sticky;
     top: 10vh;
-    border: 10px solid  #c9ead7;
+    border: 10px solid  #70ffad;
     box-sizing: border-box;
 }
 .screen#two .text{
@@ -242,17 +192,11 @@ section{
 }
 .screen#two .text .quote-container{
     margin-top: 20vh;
-    background: #48BE7A;
-    color: #fff;
-}
-.screen#two .text .quote-container .quote{
-    position: absolute;
-    max-width: 45vw;
-    left: 40%;
-    z-index: 1;
-    padding: 1em;
-    background: #48BE7A;
-    color: #fff;
+    margin-left: -20em;
+    background: #70ffad;
+    color: #000;
+    position: relative;
+    z-index: 2;
 }
 @media all and (max-width: 1000px){
     .screen#two{
@@ -297,7 +241,7 @@ section{
 }
 .screen#three .text h2{
     text-decoration: underline;
-    text-decoration-color: #fbcad7;
+    text-decoration-color: #F4648B;
 }
 .screen#three .text h2.under-below { 
   -webkit-text-underline-position: under;
@@ -329,15 +273,15 @@ section{
     z-index: 1;
     background: #F4648B;
     color: #fff;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.screen#three .quote-container cite{
+	flex: auto 0 0;
 }
 .screen#three .quote-container .quote{
-    height: auto;
-    position: absolute;
-    padding: 1em;
-    box-sizing: border-box;
-    top: 50%;
-    transform: translateY(-50%);
+	font-size: 1.5em;
 }
 @media all and (max-width: 1000px){
     .screen#three{
@@ -374,8 +318,8 @@ section{
 
 
 section.quote-container{
-    height: auto;
-    background: #EA9624;
+    height: 18vh;
+    background: #EF0A46;
     color: #fff;
     padding: 2em;
     margin-top: 1em;
@@ -383,11 +327,12 @@ section.quote-container{
     text-align: center;
     position: relative;
 }
-section.quote-container .quote{
+section.quote-container cite,
+section.quote-container blockquote{
     text-align: center;
 }
-section.quote-container .quote p{
-    text-align: center;
+section.quote-container blockquote{
+	font-size: 1.667em;
 }
 .cat{
     width: auto;
@@ -398,8 +343,8 @@ section.quote-container .quote p{
 .cat img{
     width: auto;
     height: 10%;
-    bottom: 1em;
-    left: 0;
+    bottom: 0;
+    left: -4vw;
     position: absolute;
 }
 @media all and (max-width: 768px){
