@@ -16,33 +16,16 @@
 <body>
   <main>
     <section class="screen" id="one">
-      <img src="links/logo-PeterdeLeeuw2.svg">
-      <!-- <div class="header-text">
+      <div class="header-text">
         <h3 class="name">Peter de Leeuw</h3>
-        <h1 class="header-title">
-          <span style="color: #C264F4;">V</span>
-          <span style="color: #EA9624;">i</span>
-          <span style="color: #647AF4;">o</span>
-          <span style="color: #F4648B;">o</span>
-          <span style="color: #48BE7A;">l</span>
-          <span style="color: #FC0D1B;">o</span>
-          <span style="color: #C264F4;">n</span>
-          <span style="color: #EA9624;">d</span>
-          <span style="color: #647AF4;">e</span>
-          <span style="color: #F4648B;">r</span>
-          <span style="color: #48BE7A;">w</span>
-          <span style="color: #FC0D1B;">i</span>
-          <span style="color: #C264F4;">j</span>
-          <span style="color: #EA9624;">s</span>
-        </h1>
-        <h2 class="tagline">op hoog niveau</h2>
-      </div> -->
+        <h1 class="header-title">Vioolonderwijs op hoog niveau</h1>
+      </div>
     </section>
 
     <section class="screen" id="two">
       <div class="text">
-        <h2>Peter de Leeuw</h2>
-        <p class="bigger">Violist Peter de Leeuw, geeft vioolles in zowel de kop van Noord Holland als in Amstelveen. 
+        <h2>Vioolles in Amstelveen en in Sint Maartensvlotbrug</h2>
+        <p class="bigger">Violist <strong>Peter de Leeuw</strong>, geeft vioolles in zowel de <a href="#vioolles-sintmaartens-vlotbrug">Kop van Noord Holland</a> als in <a href="#vioolles-amstelveen">Amstelveen</a>. 
         Hij was jaren lang docent aan de Conservatoria van Utrecht, Rotterdam en Tilburg, waar hij studenten opleidde om zich te specialiseren in de viool pedagogiek. Tevens was hij als viooldocent verbonden aan de gerenommeerde Amstelveense Muziekschool.</p>
         <p> Als zeer ervaren viooldocent geeft hij vioolles aan leerlingen van alle leeftijden en niveaus, waarbij hij graag les geeft aan leerlingen vanaf het aller eerste begin. Het is heel inspirerend te ervaren dat de leerlingen uitgroeien tot volwaardige amateur spelers of professionele violisten.</p>
         <p>Sinds enige jaren is Peter de Leeuw repetitor van de violen van het Noord-Hollands Jeugd Orkest</p>
@@ -113,35 +96,54 @@
       </div>
     </section>
 
-    <section class="quote-container">
-    	<cite>Heleen</cite>
-		<blockquote class="quote">
-			&ldquo;Ik was 44 toen ik mijn eerste vioolles kreeg van Peter. <br />Na een jaar speelde ik al goed genoeg om mee te kunnen doen met het Volwassen Project Orkest van de Muziekschool. <br />Peter weet elke les leerzaam en leuk te maken. Kritiek is altijd opbouwend, en passend bij het niveau waarop ik speel.&rdquo;
-		</blockquote>
-    </section>
+    
 
     <section class="screen" id="four">
-      <div class="text">
-        <h2>Contact</h2>
-        <p>Peter de Leeuw is te bereiken onder <br>
-        telefoonnummer: 06 14961274<br>
-        mailadres: p_de_leeuw@hetnet.nl</p>
-        <p class="location"> <strong>Locatie Amstelveen</strong><br>
-        Ingenieur Romplaan 1A<br>
-        1185 DK Amstelveen</p>
-        <p class="location"><strong>Locatie Sint Maartensvlotbrug</strong><br>
-        Ruigeweg 55A<br>
-        Huis 16<br>
-        752 HC Sint Maartensvlotbrug</p>
-        <div class="cat">
-          <img src="links/cat.svg" alt="cato negro" >
-        </div>
-      </div>
-      <div class="foto">
-        <img src="links/PeterdeLeeuw-screen4.jpg">
-      </div>
+		<div class="quote-container">
+			<cite>Heleen</cite>
+			<blockquote class="quote">
+				&ldquo;Ik was 44 toen ik mijn eerste vioolles kreeg van Peter. <br />Na een jaar speelde ik al goed genoeg om mee te kunnen doen met het Volwassen Project Orkest van de Muziekschool. <br />Peter weet elke les leerzaam en leuk te maken. Kritiek is altijd opbouwend, en passend bij het niveau waarop ik speel.&rdquo;
+			</blockquote>
+		</div>
+		<div class="content">
+	      <div class="text">
+	        <h2>Contact</h2>
+	        <p>Peter de Leeuw is te bereiken onder <br>
+	        telefoonnummer: 06 14961274<br>
+	        mailadres: p_de_leeuw@hetnet.nl</p>
+	        <div id="vioolles-amstelveen">
+		        <h3>Vioolles in Amstelveen</h3>
+		        <p>Ingenieur Romplaan 1A<br>
+		        1185 DK Amstelveen</p>
+	    	</div>
+	    	<div id="vioolles-sintmaartens-vlotbrug">
+		        <h3>Vioolles in Sint Maartensvlotbrug</h3>
+		        <p>Ruigeweg 55A<br>
+		        Huis 16<br>
+		        752 HC Sint Maartensvlotbrug</p>
+		    </div>
+	        <div class="cat">
+	          <img src="links/cat.svg" alt="cato negro" onclick="playAudio()" >
+	        </div>
+	      </div>
+	      <div class="foto">
+	        <img src="links/PeterdeLeeuw-screen4.jpg">
+	      </div>
+	  </div>
     </section> 
   </main>
+
+<audio id="miauw">
+  <source src="sounds/meow.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+	var miauww = document.getElementById("miauw");
+	function playAudio() { 
+	  miauww.play(); 
+	}
+</script>
 
 <script>
    

@@ -5,7 +5,7 @@
 html,body{
     padding: 0;
     margin: 0;
-        scroll-behavior: smooth;
+    scroll-behavior: smooth;
 
 }
 body{
@@ -31,7 +31,11 @@ h2{
 h3{
 	font-weight: 400;
     font-size: 2em;
-    line-height: 1.5em;
+    line-height: 1.3333em;
+    margin-bottom: 0;
+}
+h3 + p{
+	margin-top: 0;
 }
 .bigger{
 	font-size: 1.3125em;
@@ -46,6 +50,11 @@ video{
 }
 ::-webkit-scrollbar{
     display: none;
+}
+a:link,
+a:visited{
+	text-decoration: underline;
+	color: #000;
 }
 
 .text{
@@ -74,7 +83,11 @@ video{
     line-height: 1.3em;
     margin: 0;
 }
-
+@media all and (max-width: 1000px){
+	.quote-container blockquote{
+		font-size: 1.333em;
+	}
+}
 
 section{
     height: 100vh;
@@ -87,13 +100,13 @@ section{
 
 @media all and (max-width: 1000px){
     body{
-        font-size: 95%;
+        font-size: 100%;
     }
     h1{
         font-size: 5em;
     }
     h2{
-        font-size: 2.4em;
+        font-size: 1.8em;
     }
     h3{
         font-size: 1.5em;
@@ -119,9 +132,6 @@ section{
     h1{
         font-size: 3.6em;
     }
-    .screen#one .header-text h2{
-        font-size: 1.5em;
-    }
     h3{
         font-size: 1.5em;
     }
@@ -130,7 +140,9 @@ section{
     }
 }
 
-
+:target {
+	background-color: lightyellow;
+}
 
 
 .screen#one{
@@ -147,13 +159,26 @@ section{
     top: 0;
     object-fit: contain;
 }
+.screen#one .header-text{
+    max-width: 80%;
+    height: 100%;
+    margin-right: 4em;
+    margin-left: auto;
+    background: transparent url(links/logo-PeterdeLeeuw2.svg) right top no-repeat;
+    background-size: contain;
+    text-indent: -9999em;
+}
+.screen#one .header-text *{
+	display: inline;
+	margin: 0;
+}
 @media all and (max-width: 1000px){
     section#one{
         padding: 1em;
         height: 100vh;
     }
-    .screen#one img{
-        max-width: 80%;
+    .screen#one .header-text{
+    	max-width: 95%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -226,11 +251,11 @@ section{
     display: flex;
     flex-wrap: nowrap;
     height: auto;
+    gap: 6em;
 }
 .screen#three .text{
     flex: 30% 0 0;
     position: relative;
-    margin-right: 6em;
 }
 .screen#three .text .sticky{
     position: -webkit-sticky;
@@ -300,6 +325,9 @@ section{
     .screen#three .gallery .square-container video{
         height: 48%;
     }
+    .screen#three .quote-container .quote{
+    	font-size: 1.333em;
+    }
 }
 @media all and (max-width: 768px){
     .screen#three{
@@ -317,58 +345,53 @@ section{
 
 
 
-section.quote-container{
-    height: 18vh;
-    background: #EF0A46;
-    color: #fff;
-    padding: 2em;
-    margin-top: 1em;
-    margin-bottom: 0;
-    text-align: center;
-    position: relative;
-}
-section.quote-container cite,
-section.quote-container blockquote{
-    text-align: center;
-}
-section.quote-container blockquote{
-	font-size: 1.667em;
-}
-.cat{
-    width: auto;
-    z-index: 100;
-    height: auto;
 
-}
-.cat img{
-    width: auto;
-    height: 10%;
-    bottom: 0;
-    left: -4vw;
-    position: absolute;
-}
-@media all and (max-width: 768px){
-    .cat img{
-        left: auto;
-        right: 1em;
-        transform: scaleX(-1);    
-    }
-}
+
 
 
 
 .screen#four{
     display: flex;
+    flex-direction: column;
     padding: 0;
-    padding-left: 5vw;
-    height: 82vh;
+    height: 100vh;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+}
+.screen#four .quote-container{
+	flex: auto 0 1;
+	width: 100%;
+    background: #EF0A46;
+    color: #fff;
+    padding: 2em;
+    box-sizing: border-box;
+    margin: 0;
+    text-align: center;
+}
+.screen#four .quote-container cite,
+.screen#four .quote-container blockquote{
+    text-align: center;
+}
+.screen#four .quote-container blockquote{
+	font-size: 1.667em;
+}
+.screen#four .content{
+	flex: auto 1 1;
+	display: flex;
 }
 .screen#four .foto{
-    flex: 50% 1 0;
+    flex: 60% 1 0;
+    box-sizing: border-box;
+    height: 100%;
 }
 .screen#four .text{
-    margin-top: 10vh;
     position: relative;
+    box-sizing: border-box;
+    flex: 40% 0 1;
+    padding: 2em 2em 2em 5vw;
+    position: relative;
+    height: 100%;
 }
 @media all and (max-width: 1000px){
     .screen#four{
@@ -376,12 +399,40 @@ section.quote-container blockquote{
         height: auto;
         padding: 0;
     }
+    .screen#four .quote-container blockquote {
+	    font-size: 1.333em;
+	}
+    .screen#four .content{
+    	flex-direction: column;
+    }
+    .screen#four .foto{
+    	order: 1;
+    }
     .screen#four .text{
-        margin: 0;
+    	order: 2;
     }
 }
 
+.screen#four .text .cat{
+    width: auto;
+    z-index: 100;
+    height: auto;
 
+}
+.screen#four .text .cat img{
+    width: auto;
+    height: 10%;
+    bottom: 0;
+    left: 1vw;
+    position: absolute;
+}
+@media all and (max-width: 768px){
+    .screen#four .text .cat img{
+        left: auto;
+        right: 1em;
+        transform: scaleX(-1);    
+    }
+}
 
 
 
